@@ -272,13 +272,14 @@ ul, ol {
    ========================================================================== */
 .hero-section {
   position: relative;
-  height: 100vh;
-  min-height: 750px;
+  min-height: 100vh;
+  min-height: 820px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   padding-top: var(--header-height);
+  padding-bottom: 60px;
 }
 
 .hero-slider {
@@ -333,7 +334,7 @@ ul, ol {
   z-index: 3;
   width: 100%;
   max-width: var(--container-max);
-  padding: 30px 32px 50px;
+  padding: 40px 32px 100px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -345,7 +346,7 @@ ul, ol {
   gap: 32px;
   color: #ffffff;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.85);
-  margin-top: 70px;
+  margin-top: 50px;
   margin-bottom: 20px;
 }
 
@@ -375,13 +376,14 @@ ul, ol {
   flex-direction: column;
   gap: 16px;
   max-width: 440px;
-  background: rgba(22, 30, 26, 0.75);
+  background: rgba(22, 30, 26, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: 24px 28px;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(197, 155, 39, 0.3);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(197, 155, 39, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
 }
 
 .hero-badge-tag {
@@ -418,7 +420,7 @@ ul, ol {
 
 .hero-scroll {
   position: absolute;
-  bottom: 30px;
+  bottom: 75px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
@@ -430,11 +432,12 @@ ul, ol {
   font-size: 0.75rem;
   letter-spacing: 0.25em;
   font-family: var(--font-en);
+  pointer-events: none;
 }
 
 .hero-scroll-line {
   width: 1px;
-  height: 48px;
+  height: 40px;
   background: linear-gradient(180deg, var(--color-gold) 0%, transparent 100%);
   animation: scrollDown 2.2s infinite ease-in-out;
 }
@@ -452,7 +455,7 @@ ul, ol {
 .booking-bar-wrapper {
   position: relative;
   z-index: 50;
-  margin-top: -50px;
+  margin-top: -45px;
   margin-bottom: 50px;
 }
 
@@ -2045,17 +2048,31 @@ ul, ol {
   .footer-top-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-height: 860px) and (min-width: 769px) {
+  .hero-section { min-height: 780px; padding-bottom: 70px; }
+  .hero-content { padding-bottom: 90px; }
+  .hero-catch { margin-top: 20px; }
+  .hero-title-main { font-size: 2.2rem; }
+  .hero-title-sub { font-size: 1.15rem; padding-top: 30px; }
+  .hero-badge-area { margin-bottom: 25px; padding: 20px 24px; }
+  .hero-scroll { bottom: 65px; }
+}
+
 @media (max-width: 768px) {
   .site-header { height: 70px; }
   .nav-menu { display: none; }
   .btn-header-tel { display: none; }
   .nav-toggle-btn { display: flex; }
   
-  .hero-content { flex-direction: column; align-items: flex-start; gap: 30px; }
-  .hero-catch { align-self: flex-start; }
-  .hero-badge-area { width: 100%; max-width: 100%; }
+  .hero-section { min-height: auto; padding-top: 90px; padding-bottom: 30px; height: auto; }
+  .hero-content { flex-direction: column; align-items: flex-start; gap: 24px; padding: 10px 16px 20px; }
+  .hero-catch { align-self: flex-start; margin-top: 10px; margin-bottom: 0; }
+  .hero-title-main { font-size: 2rem; }
+  .hero-title-sub { font-size: 1.05rem; padding-top: 20px; }
+  .hero-badge-area { width: 100%; max-width: 100%; margin-bottom: 0; }
+  .hero-scroll { display: none; }
   
-  .booking-bar-wrapper { margin-top: -30px; padding: 0 16px; }
+  .booking-bar-wrapper { margin-top: 15px; margin-bottom: 40px; padding: 0 16px; }
   .booking-form { grid-template-columns: 1fr; }
   .booking-submit-area { grid-column: span 1; }
   
@@ -2072,6 +2089,224 @@ ul, ol {
   body { padding-bottom: 70px; }
   
   .section-main-title { font-size: 1.8rem; }
+}
+
+/* ==========================================================================
+   猫カフェ＆自然な猫たち用コンポーネント (Cat Cafe & Residing Cats Components)
+   ========================================================================== */
+
+/* 猫カフェ誘導バナー（旅館と猫カフェの違いを明示） */
+.cat-cafe-notice-banner {
+  background: linear-gradient(135deg, rgba(30, 42, 36, 0.95) 0%, rgba(20, 28, 24, 0.98) 100%);
+  border: 1px solid rgba(197, 155, 39, 0.4);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  margin: 40px 0;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .cat-cafe-notice-banner {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+  }
+}
+
+.cat-notice-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(197, 155, 39, 0.15);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold-light);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.cat-notice-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.cat-notice-text {
+  font-size: 0.95rem;
+  color: var(--color-text-sub);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.cat-notice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.btn-catcafe-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--color-gold) 0%, #a47e1b 100%);
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 24px;
+  border-radius: 9999px;
+  transition: var(--transition-base);
+  box-shadow: 0 4px 18px rgba(197, 155, 39, 0.4);
+}
+
+.btn-catcafe-main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(197, 155, 39, 0.6);
+  color: #000000;
+}
+
+.cat-cafe-mini-preview {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cat-cafe-mini-preview img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.cat-cafe-mini-preview:hover img {
+  transform: scale(1.06);
+}
+
+.cat-cafe-preview-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(15, 20, 18, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--color-gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 猫カフェ専用ページ用スタイル */
+.catcafe-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+
+@media (max-width: 1024px) {
+  .catcafe-gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .catcafe-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}
+
+.catcafe-photo-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  aspect-ratio: 3 / 4;
+  background: #141b18;
+}
+
+.catcafe-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.catcafe-photo-card:hover img {
+  transform: scale(1.08);
+}
+
+.catcafe-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 15, 12, 0.9) 100%);
+  color: #ffffff;
+  font-size: 0.82rem;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.catcafe-system-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 32px 0;
+}
+
+@media (max-width: 900px) {
+  .catcafe-system-grid { grid-template-columns: 1fr; }
+}
+
+.catcafe-system-card {
+  background: #18221d;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.catcafe-system-card.featured {
+  border-color: var(--color-gold);
+  background: linear-gradient(180deg, #1d2b23 0%, #15201a 100%);
+  position: relative;
+}
+
+.catcafe-system-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--color-gold);
+  color: #121815;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 9999px;
+}
+
+.catcafe-price-highlight {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--color-gold-light);
+  margin: 12px 0;
+}
+
+.catcafe-price-highlight small {
+  font-size: 0.9rem;
+  color: var(--color-text-sub);
 }
 
 /* ==========================================================================
