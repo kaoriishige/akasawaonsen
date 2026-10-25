@@ -2952,3 +2952,70 @@ ul, ol {
   .spots-grid { grid-template-columns: 1fr; }
 }
 
+
+
+/* ==========================================================================
+   Detail Split Row & Cat Cafe About Styles
+   ========================================================================== */
+.detail-split-row {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 36px;
+  margin-bottom: 48px;
+}
+
+.detail-split-img {
+  width: 100%;
+}
+
+.detail-split-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.detail-split-content {
+  width: 100%;
+}
+
+.detail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-gold-light);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  padding: 4px 14px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.detail-title {
+  font-family: var(--font-mincho);
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  color: #ffffff;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.detail-text {
+  font-size: 0.96rem;
+  line-height: 1.9;
+  color: var(--color-text-sub);
+  margin-bottom: 16px;
+}
+
+@media (max-width: 991px) {
+  .detail-split-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

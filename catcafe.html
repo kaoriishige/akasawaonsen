@@ -60,7 +60,7 @@
       <nav class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link">トップ</a>
         <a href="onsen.html" class="nav-link">源泉ぬる湯</a>
-        <a href="rooms.html" class="nav-link">客室・ペット同伴</a>
+        <a href="rooms.html" class="nav-link">客室</a>
         <a href="cuisine.html" class="nav-link">お料理</a>
         <a href="catcafe.html" class="nav-link active">ネコカフェ</a>
         <a href="villa-camp.html" class="nav-link">別荘・キャンプ</a>
@@ -156,7 +156,7 @@
     <!-- ==========================================================================
          1. カフェ紹介 (About)
          ========================================================================== -->
-    <section class="section-wrapper" id="about">
+        <section class="section-wrapper" id="about">
       <div class="container">
         <div class="section-header">
           <span class="section-en-title">Healing Cat Paradise</span>
@@ -173,21 +173,44 @@
         </div>
 
         <div class="detail-split-row">
+          <!-- 左側: 猫カフェの魅力が伝わるフォトグリッド (PCでがら空きを解消) -->
           <div class="detail-split-img">
-            <img src="assets/catcafe/insta_cat_7.jpg" alt="あかさわネコカフェの店内で遊ぶ猫たち">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;">
+              <div style="position: relative; border-radius: 10px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.25); box-shadow: 0 6px 18px rgba(0,0,0,0.35); aspect-ratio: 1/1;">
+                <img src="assets/catcafe/insta_cat_7.jpg" alt="テーブルの上で無邪気に遊ぶ猫ちゃん" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+                <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.65); color: #fff; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; backdrop-filter: blur(4px);">無邪気な遊び時間</span>
+              </div>
+              <div style="position: relative; border-radius: 10px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.25); box-shadow: 0 6px 18px rgba(0,0,0,0.35); aspect-ratio: 1/1;">
+                <img src="assets/catcafe/cafe_photo_1.jpg" alt="木を基調とした開放的なカフェ店内" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+                <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.65); color: #fff; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; backdrop-filter: blur(4px);">ぬくもりの一軒家</span>
+              </div>
+              <div style="position: relative; border-radius: 10px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.25); box-shadow: 0 6px 18px rgba(0,0,0,0.35); aspect-ratio: 1/1;">
+                <img src="assets/catcafe/insta_cat_2.jpg" alt="お膝の上でリラックスする甘えん坊猫" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+                <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.65); color: #fff; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; backdrop-filter: blur(4px);">お膝でゴロゴロ</span>
+              </div>
+              <div style="position: relative; border-radius: 10px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.25); box-shadow: 0 6px 18px rgba(0,0,0,0.35); aspect-ratio: 1/1;">
+                <img src="assets/catcafe/cafe_photo_5.jpg" alt="スタッフが愛情いっぱいに育てる保護猫たち" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+                <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.65); color: #fff; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; backdrop-filter: blur(4px);">愛嬌たっぷりの子猫</span>
+              </div>
+            </div>
           </div>
+
+          <!-- 右側: ストーリー・魅力詳細 -->
           <div class="detail-split-content">
             <span class="detail-badge"><i class="fa-solid fa-paw"></i> 保護猫とのふれあい＆里親募集</span>
-            <h3 class="detail-title">思いっきり遊んで、触れ合って、心がほどけるひととき。</h3>
+            <h3 class="detail-title">思いっきり遊んで、触れ合って、<br>心がじんわりほどけるひととき。</h3>
             <p class="detail-text">
-              「あかさわネコカフェ＆ダイニング」は、赤沢温泉旅館のすぐ近く（中塩原）に誕生した保護猫カフェです。木を基調とした温もりあふれるカフェスペースには、猫たちが思いきり走れるキャットホイールやキャットタワー、落ち着いてお昼寝できるくつろぎスペースを完備。
+              「あかさわネコカフェ＆ダイニング」は、赤沢温泉旅館のすぐ近く（中塩原）に誕生した保護猫カフェです。木を基調とした温もりあふれる2フロアの空間には、猫たちが思いきり走れるキャットホイールや高いキャットウォーク、のんびりお昼寝できるくつろぎスペースを完備。
             </p>
             <p class="detail-text">
-              おもちゃで一緒に遊んだり、大好物のおやつをあげたり、お膝の上でリラックスしたり……。猫たちのありのままの無邪気な姿に包まれて、日常の疲れをすっきりと忘れさせてくれます。また、新しいご家族を探している保護猫たちの「里親募集」も行っています。
+              おもちゃで一緒に元気に遊んだり、大好物のおやつをあげたり、お膝の上でリラックスしたり……。猫たちのありのままの無邪気な姿に包まれて、日常の疲れをすっきりと忘れさせてくれます。また、生涯を共にする新しいご家族を探している保護猫たちの「里親募集」も温かく行っています。
             </p>
-            <div style="margin-top: 20px;">
-              <a href="https://www.instagram.com/akasawa_catcafe/" target="_blank" rel="noopener noreferrer" class="btn-catcafe-main">
+            <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px;">
+              <a href="https://www.instagram.com/akasawa_catcafe/" target="_blank" rel="noopener noreferrer" class="btn-catcafe-main" style="display: inline-flex; align-items: center; gap: 8px;">
                 <i class="fa-brands fa-instagram"></i> 公式Instagramで最新の様子を見る
+              </a>
+              <a href="#system" class="btn-catcafe-sub" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 0.95rem; transition: all 0.3s ease;">
+                <i class="fa-solid fa-clock"></i> 営業時間・料金システムを見る
               </a>
             </div>
           </div>
@@ -213,6 +236,8 @@
         </div>
       </div>
     </section>
+
+    
 
     <!-- ==========================================================================
          2. 大切なお知らせ（旅館とネコカフェの違い）
