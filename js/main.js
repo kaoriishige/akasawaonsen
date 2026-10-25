@@ -6,13 +6,15 @@
 document.addEventListener('DOMContentLoaded', () => {
   // 1. スクロールヘッダー効果
   const header = document.querySelector('.site-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  }
 
   // 2. ヒーロースライダー (自動切替)
   const slides = document.querySelectorAll('.hero-slide');
@@ -92,13 +94,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      faqItems.forEach(i => i.classList.remove('active'));
-      if (!isActive) {
-        item.classList.add('active');
-      }
-    });
+    if (question) {
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach(i => i.classList.remove('active'));
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    }
   });
 
   // 7. 予約プランモーダル
@@ -108,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalTargetPlan = document.getElementById('modalTargetPlan');
 
   function openBookingModal(planTitle = '公式ベストレート宿泊プラン') {
+    if (!modal) return;
     if (modalTargetPlan) {
       modalTargetPlan.textContent = planTitle;
     }
@@ -116,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function closeBookingModal() {
+    if (!modal) return;
     modal.classList.remove('active');
     document.body.style.overflow = '';
   }
@@ -138,26 +144,30 @@ document.addEventListener('DOMContentLoaded', () => {
         closeBookingModal();
       }
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeBookingModal();
+      }
+    });
   }
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-      closeBookingModal();
-    }
-  });
-
-  // 8. 予約検索ボタンの処理 (外部予約エンジン d-reserve へパラメータ連携)
+  // 8. 予約検索ボタンの処理 (空室条件をモーダルへ反映)
   const searchBtn = document.getElementById('searchRoomsBtn');
   if (searchBtn) {
     searchBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const checkin = document.getElementById('bookingCheckin').value;
-      const nights = document.getElementById('bookingNights').value;
-      const guests = document.getElementById('bookingGuests').value;
-      const roomType = document.getElementById('bookingRoomType').value;
+      const checkinEl = document.getElementById('bookingCheckin');
+      const nightsEl = document.getElementById('bookingNights');
+      const guestsEl = document.getElementById('bookingGuests');
+      const checkin = checkinEl ? checkinEl.value : '';
+      const nights = nightsEl ? nightsEl.value : '1';
+      const guests = guestsEl ? guestsEl.value : '2';
 
       // モーダルを開いて直販プランを案内
-      openBookingModal(`検索条件: ${checkin}〜（${nights}泊・大人${guests}名）`);
+      if (modal) {
+        openBookingModal(`検索条件: ${checkin}〜（${nights}泊・大人${guests}名）`);
+      }
     });
   }
 

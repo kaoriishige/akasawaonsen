@@ -9,3 +9,30 @@ __pycache__/
 *$py.class
 *.tmp
 *.bak
+*~
+
+# Environment & Secret files (機密情報)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+id_rsa
+id_ecdsa
+id_ed25519
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Hosting & Build tools
+.netlify/
+.firebase/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+
