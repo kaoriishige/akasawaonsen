@@ -322,12 +322,30 @@ ul, ol {
   object-position: 78% 95%;
 }
 
-.hero-slide.slide-room-pet img {
+.hero-slide.slide-room-pet img,
+.hero-slide.slide-room-suite img {
   object-position: 35% 85%;
 }
 
-.hero-slide.slide-room-suite img {
-  object-position: 35% 85%;
+/* 新しい5つのヒーロースライド用PCスタイル */
+.hero-slide.slide-onsen-wood img {
+  object-position: 60% 75%;
+}
+
+.hero-slide.slide-exterior-night img {
+  object-position: 50% 60%;
+}
+
+.hero-slide.slide-room-bed img {
+  object-position: 45% 65%;
+}
+
+.hero-slide.slide-cats-owners img {
+  object-position: 52% 45%;
+}
+
+.hero-slide.slide-onsen-rock img {
+  object-position: 45% 75%;
 }
 
 .hero-overlay {
@@ -2090,25 +2108,26 @@ ul, ol {
   .hero-badge-title { font-size: 1.15rem; }
   .hero-scroll { display: none; }
 
-  /* スマホでのヒーロー背景画像の画角最適化（屋根、エアコン、お湯なしを完全解消） */
-  .hero-slide img {
-    object-position: center bottom;
+  /* 新しい5つのヒーロースライド用スマホ最適化スタイル */
+  .hero-slide.slide-onsen-wood img {
+    /* 1. 旅館のお風呂（初期表示）：湯船となみなみ注がれたお湯・木桶を画面中央にしっかり映す */
+    object-position: 75% 95% !important;
   }
-  .hero-slide.slide-exterior img {
-    /* 三角屋根ばかりにならず、建物正面・玄関・テラスとお庭がしっかり見える位置 */
-    object-position: 48% 68% !important;
+  .hero-slide.slide-exterior-night img {
+    /* 2. 夜景外観：手前の鹿オブジェから温かく灯る玄関までが縦長画面に調和 */
+    object-position: 50% 65% !important;
   }
-  .hero-slide.slide-onsen img {
-    /* 右側にある湯船となみなみ注がれたお湯・湯桶を画面中央にしっかり映す */
-    object-position: 82% 98% !important;
+  .hero-slide.slide-room-bed img {
+    /* 3. ベッド客室：エアコンではなく、ベッド・座卓・窓の景色をメインに */
+    object-position: 45% 75% !important;
   }
-  .hero-slide.slide-room-pet img {
-    /* 右上の壁掛けエアコンを画面外へ逃がし、手前の清潔なお布団・畳・座卓・窓の緑を映す */
-    object-position: 30% 92% !important;
+  .hero-slide.slide-cats-owners img {
+    /* 4. 看板猫とご夫妻：ご夫妻の温かい笑顔と猫ちゃんたちが画面中央に */
+    object-position: 52% 45% !important;
   }
-  .hero-slide.slide-room-suite img {
-    /* 右上のエアコンや天井ではなく、客室の畳・お布団・窓の景色を映す */
-    object-position: 30% 92% !important;
+  .hero-slide.slide-onsen-rock img {
+    /* 5. 岩露天風呂：手前に広がる豊かな源泉のお湯と岩肌を映す */
+    object-position: 45% 85% !important;
   }
   
   .booking-bar-wrapper { margin-top: 15px; margin-bottom: 40px; padding: 0 16px; }
