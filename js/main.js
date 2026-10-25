@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
   openModalBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      alert('現在、ホームページ確認用のため、オンライン予約機能は準備中です');
       const planName = btn.getAttribute('data-plan') || '公式直販ベストレート予約';
       openBookingModal(planName);
     });
@@ -152,22 +153,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. 予約検索ボタンの処理 (空室条件をモーダルへ反映)
+  // 8. 予約検索ボタンの処理 (空室条件をモーダルへ反映 & 準備中案内)
   const searchBtn = document.getElementById('searchRoomsBtn');
   if (searchBtn) {
     searchBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const checkinEl = document.getElementById('bookingCheckin');
-      const nightsEl = document.getElementById('bookingNights');
-      const guestsEl = document.getElementById('bookingGuests');
-      const checkin = checkinEl ? checkinEl.value : '';
-      const nights = nightsEl ? nightsEl.value : '1';
-      const guests = guestsEl ? guestsEl.value : '2';
-
-      // モーダルを開いて直販プランを案内
-      if (modal) {
-        openBookingModal(`検索条件: ${checkin}〜（${nights}泊・大人${guests}名）`);
-      }
+      alert('現在、ホームページ確認用のため、オンライン予約機能は準備中です');
     });
   }
 
