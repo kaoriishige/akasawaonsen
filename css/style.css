@@ -2097,60 +2097,56 @@ ul, ol {
   .nav-toggle-btn { display: flex; }
   
   .hero-section {
-    height: 55vh;
-    min-height: 440px;
-    max-height: 520px;
-    padding-top: 85px;
+    height: 70vh;
+    min-height: 500px;
+    max-height: 640px;
+    padding-top: 76px;
     padding-bottom: 20px;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .hero-content {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
-    padding: 10px 16px;
+    justify-content: flex-start;
+    padding: 6px 18px;
     width: 100%;
   }
   .hero-catch {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: flex-start;
-    gap: 8px;
-    width: 100%;
-    max-width: 100%;
-    background: linear-gradient(135deg, rgba(15, 20, 18, 0.85) 0%, rgba(22, 30, 26, 0.72) 100%);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 14px 16px;
-    border-radius: var(--radius-md);
-    border-left: 3px solid var(--color-gold);
-    border-top: 1px solid rgba(197, 155, 39, 0.3);
-    border-right: 1px solid rgba(197, 155, 39, 0.15);
-    border-bottom: 1px solid rgba(197, 155, 39, 0.15);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
-    margin-top: 0;
+    gap: 14px;
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-top: 4px;
     margin-bottom: 0;
   }
   .hero-title-main {
-    writing-mode: horizontal-tb !important;
-    font-size: 1.45rem;
-    line-height: 1.45;
-    letter-spacing: 0.08em;
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed;
+    font-size: 1.42rem;
+    line-height: 1.6;
+    letter-spacing: 0.18em;
     color: #ffffff;
     font-family: var(--font-serif);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 0, 0, 0.7);
   }
   .hero-title-sub {
-    writing-mode: horizontal-tb !important;
-    font-size: 0.88rem;
-    line-height: 1.6;
-    letter-spacing: 0.06em;
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    letter-spacing: 0.14em;
     color: var(--color-gold-light);
     font-family: var(--font-serif);
-    padding-top: 0;
-    margin-top: 2px;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+    padding-top: 10px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 0, 0, 0.85);
   }
   .hero-badge-area {
     width: 100%;
