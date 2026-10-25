@@ -272,14 +272,15 @@ ul, ol {
    ========================================================================== */
 .hero-section {
   position: relative;
-  min-height: 100vh;
-  min-height: 820px;
+  height: 60vh;
+  min-height: 480px;
+  max-height: 580px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   overflow: hidden;
   padding-top: var(--header-height);
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 }
 
 .hero-slider {
@@ -311,7 +312,7 @@ ul, ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center bottom;
 }
 
 .hero-slide.slide-exterior img {
@@ -327,25 +328,25 @@ ul, ol {
   object-position: 35% 85%;
 }
 
-/* 新しい5つのヒーロースライド用PCスタイル */
+/* 新しい5つのヒーロースライド用PCスタイル：画像の下部（湯船・お湯・お庭など）が確実に見えるようbottom基準に最適化 */
 .hero-slide.slide-onsen-wood img {
-  object-position: 60% 75%;
+  object-position: center bottom;
 }
 
 .hero-slide.slide-exterior-night img {
-  object-position: 50% 60%;
+  object-position: center 80%;
 }
 
 .hero-slide.slide-room-bed img {
-  object-position: 45% 65%;
+  object-position: center bottom;
 }
 
 .hero-slide.slide-cats-owners img {
-  object-position: 52% 45%;
+  object-position: center 60%;
 }
 
 .hero-slide.slide-onsen-rock img {
-  object-position: 45% 75%;
+  object-position: center bottom;
 }
 
 .hero-overlay {
@@ -356,10 +357,10 @@ ul, ol {
   height: 100%;
   background: linear-gradient(
     180deg,
-    rgba(15, 20, 18, 0.6) 0%,
-    rgba(15, 20, 18, 0.25) 40%,
-    rgba(15, 20, 18, 0.75) 80%,
-    var(--color-bg-deep) 100%
+    rgba(15, 20, 18, 0.5) 0%,
+    rgba(15, 20, 18, 0.1) 40%,
+    rgba(15, 20, 18, 0.35) 75%,
+    rgba(15, 20, 18, 0.75) 100%
   );
   z-index: 2;
 }
@@ -369,7 +370,7 @@ ul, ol {
   z-index: 3;
   width: 100%;
   max-width: var(--container-max);
-  padding: 40px 32px 100px;
+  padding: 30px 32px 60px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -378,19 +379,19 @@ ul, ol {
 .hero-catch {
   display: flex;
   flex-direction: row-reverse;
-  gap: 32px;
+  gap: 28px;
   color: #ffffff;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.85);
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .hero-title-main {
   font-family: var(--font-serif);
-  font-size: 2.6rem;
-  line-height: 1.8;
+  font-size: 2.3rem;
+  line-height: 1.7;
   font-weight: 500;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.32em;
   color: #ffffff;
   background: linear-gradient(180deg, #ffffff 0%, #eae7de 100%);
   -webkit-background-clip: text;
@@ -399,26 +400,26 @@ ul, ol {
 
 .hero-title-sub {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
-  line-height: 2;
-  letter-spacing: 0.3em;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  letter-spacing: 0.22em;
   color: var(--color-gold-light);
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .hero-badge-area {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-width: 440px;
+  gap: 12px;
+  max-width: 420px;
   background: rgba(22, 30, 26, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  padding: 24px 28px;
+  padding: 20px 24px;
   border-radius: var(--radius-md);
   border: 1px solid rgba(197, 155, 39, 0.35);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .hero-badge-tag {
@@ -454,20 +455,7 @@ ul, ol {
 }
 
 .hero-scroll {
-  position: absolute;
-  bottom: 75px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  color: var(--color-gold-light);
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
-  font-family: var(--font-en);
-  pointer-events: none;
+  display: none;
 }
 
 .hero-scroll-line {
